@@ -75,11 +75,10 @@ Chef::Knife::Cmd - A small wrapper around the Chef 'knife' command line utility
 =head1 DESCRIPTION
 
 This module is a small wrapper around the Chef 'knife' command line utility.
-
 It would be awesome if this module used the Chef server API, but this module is
 not that awesome.
 
-Some things to know about this module:
+Some things worth knowing about this module:
 
 =over 4
 
@@ -102,10 +101,6 @@ the 'verbose' attribute is true.
 =item Exceptions
 
 If a knife command fails, this module will throw an exception.
-
-=item No need to mess about with string manipulation
-
-Yay.
 
 =back
 
