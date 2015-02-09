@@ -184,11 +184,6 @@ sub run {
 
 =back
 
-=head1 ABOUT THE NAME
-
-I didn't name this Chef::Knife because I'm hoping someone someday will write a
-real Chef::Knife module which uses the Chef server API.
-
 =head1 LICENSE
 
 This library is free software; you can redistribute it and/or modify
