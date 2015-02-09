@@ -55,12 +55,22 @@
       },
       "test" : {
          "requires" : {
-            "DDP" : "0",
             "Test::Most" : "0"
          }
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/kablamo/p5-chef-knife-cmd/issues"
+      },
+      "homepage" : "https://github.com/kablamo/p5-chef-knife-cmd",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/kablamo/p5-chef-knife-cmd.git",
+         "web" : "https://github.com/kablamo/p5-chef-knife-cmd"
+      }
+   },
    "version" : "0.01",
    "x_authority" : "cpan:KABLAMO"
 }
