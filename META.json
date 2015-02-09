@@ -49,7 +49,7 @@
          "requires" : {
             "JSON::MaybeXS" : "0",
             "Moo" : "0",
-            "Shell::Carapace" : "0",
+            "Shell::Carapace" : "0.03",
             "String::ShellQuote" : "0"
          }
       },

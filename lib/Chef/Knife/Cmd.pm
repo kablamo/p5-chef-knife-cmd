@@ -115,12 +115,13 @@ sub _build_vault     { Chef::Knife::Cmd::Vault->new(knife => shift)     }
 
 sub _build_shell {
     my $self = shift;
-    return Shell::Carapace->new(
+    my $shell = Shell::Carapace->new(
         print_cmd => $self->print_cmd(),
         verbose   => $self->verbose(),
-        logfile   => $self->logfile(),
         noop      => $self->noop(),
     );
+    $shell->logfile($self->logfile) if $self->logfile();
+    return $shell;
 }
 
 sub bootstrap {
