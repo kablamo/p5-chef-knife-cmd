@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/kablamo/p5-chef-knife-cmd.svg?branch=master)](https://travis-ci.org/kablamo/p5-chef-knife-cmd)
+[![Build Status](https://travis-ci.org/kablamo/p5-chef-knife-cmd.svg?branch=master)](https://travis-ci.org/kablamo/p5-chef-knife-cmd) [![Coverage Status](https://img.shields.io/coveralls/kablamo/p5-chef-knife-cmd/master.svg)](https://coveralls.io/r/kablamo/p5-chef-knife-cmd?branch=master)
 # NAME
 
 Chef::Knife::Cmd - A small wrapper around the Chef 'knife' command line utility

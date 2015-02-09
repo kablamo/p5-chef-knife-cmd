@@ -1,5 +1,5 @@
 name = "Chef-Knife-Cmd"
-badges = ["travis"]
+badges = ["travis", "coveralls"]
 module_maker="ModuleBuildTiny"
 authority = "cpan:KABLAMO"
 
