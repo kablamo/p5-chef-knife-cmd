@@ -10,7 +10,7 @@ use Shell::Carapace;
 use String::ShellQuote;
 use JSON::MaybeXS;
 
-our $VERSION = "0.03";
+our $VERSION = "0.04";
 
 =head1 NAME
 

@@ -11,12 +11,7 @@ Chef::Knife::Cmd - A small wrapper around the Chef 'knife' command line utility
         verbose   => 0,           # if true, tee output to STDOUT; default is false
         logfile   => 'knife.log',
         print_cmd => 1,
-        format    => 'json',      # add '--format json' to all knife commands
     );
-
-    # All methods below
-    # - return the output of the cmd as a string
-    # - return a hashref of the decoded json output when '--format json' is used
 
     # knife bootstrap
     $knife->bootstrap($fqdn, %options);
@@ -43,14 +38,33 @@ Chef::Knife::Cmd - A small wrapper around the Chef 'knife' command line utility
     $knife->vault->update($vault, $item, $values, %options);
     $knife->vault->show($vault, $item_name, %options);
 
+    # All methods return the output of the cmd as a string
+    my $out = $knife->node->show('mynode');
+    # => 
+    # Node Name:   mynode
+    # Environment: production
+    # FQDN:        
+    # IP:          12.34.56.78
+    # Run List:    ...
+    # ...
+
+    # All methods return the output of the cmd as a hashref when '--format json' is used
+    my $hashref = $knife->node->show('mynode', format => 'json');
+    # =>
+    # {
+    #     name             => "mynode",
+    #     chef_environment => "production",
+    #     run_list         => [...],
+    #     ...
+    # }
+
 # DESCRIPTION
 
 This module is a small wrapper around the Chef 'knife' command line utility.
-
 It would be awesome if this module used the Chef server API, but this module is
 not that awesome.
 
-Some things to know about this module:
+Some things worth knowing about this module:
 
 - Return vaules
 
@@ -72,20 +86,11 @@ Some things to know about this module:
 
     If a knife command fails, this module will throw an exception.
 
-- No need to mess about with string manipulation
-
-    Yay.
-
 # SEE ALSO
 
 - Capture::Tiny::Extended
 - Capture::Tiny
 - IPC::System::Simple
-
-# ABOUT THE NAME
-
-I didn't name this Chef::Knife because I'm hoping someone someday will write a
-real Chef::Knife module which uses the Chef server API.
 
 # LICENSE
 
