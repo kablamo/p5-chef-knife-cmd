@@ -24,12 +24,7 @@ Chef::Knife::Cmd - A small wrapper around the Chef 'knife' command line utility
         verbose   => 0,           # if true, tee output to STDOUT; default is false
         logfile   => 'knife.log',
         print_cmd => 1,
-        format    => 'json',      # add '--format json' to all knife commands
     );
-
-    # All methods below
-    # - return the output of the cmd as a string
-    # - return a hashref of the decoded json output when '--format json' is used
 
     # knife bootstrap
     $knife->bootstrap($fqdn, %options);
@@ -55,6 +50,27 @@ Chef::Knife::Cmd - A small wrapper around the Chef 'knife' command line utility
     $knife->vault->create($vault, $item, $values, %options);
     $knife->vault->update($vault, $item, $values, %options);
     $knife->vault->show($vault, $item_name, %options);
+
+    # All methods return the output of the cmd as a string
+    my $out = $knife->node->show('mynode');
+    # => 
+    # Node Name:   mynode
+    # Environment: production
+    # FQDN:        
+    # IP:          12.34.56.78
+    # Run List:    ...
+    # ...
+
+    # All methods return the output of the cmd as a hashref when '--format json' is used
+    my $hashref = $knife->node->show('mynode', format => 'json');
+    # =>
+    # {
+    #     name             => "mynode",
+    #     chef_environment => "production",
+    #     run_list         => [...],
+    #     ...
+    # }
+
 
 =head1 DESCRIPTION
 
