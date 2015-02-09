@@ -108,17 +108,6 @@ DISTRIBUTIONS
       base 0
       strict 0
       warnings 0
-  Clone-PP-1.06
-    pathname: N/NE/NEILB/Clone-PP-1.06.tar.gz
-    provides:
-      Clone::PP 1.06
-    requirements:
-      Exporter 0
-      ExtUtils::MakeMaker 0
-      perl 5.006
-      strict 0
-      vars 0
-      warnings 0
   Config-Identity-0.0018
     pathname: R/RO/ROKR/Config-Identity-0.0018.tar.gz
     provides:
@@ -131,29 +120,6 @@ DISTRIBUTIONS
       File::Spec 0
       File::Which 0
       IPC::Run 0
-  Data-Printer-0.35
-    pathname: G/GA/GARU/Data-Printer-0.35.tar.gz
-    provides:
-      DDP undef
-      Data::Printer 0.35
-      Data::Printer::Filter undef
-      Data::Printer::Filter::DB undef
-      Data::Printer::Filter::DateTime undef
-      Data::Printer::Filter::Digest undef
-    requirements:
-      Carp 0
-      Clone::PP 0
-      ExtUtils::MakeMaker 0
-      Fcntl 0
-      File::HomeDir 0.91
-      File::Spec 0
-      File::Temp 0
-      Package::Stash 0.3
-      Scalar::Util 0
-      Sort::Naturally 0
-      Term::ANSIColor 3
-      Test::More 0.88
-      version 0.77
   Data-Section-Simple-0.07
     pathname: M/MI/MIYAGAWA/Data-Section-Simple-0.07.tar.gz
     provides:
@@ -182,18 +148,6 @@ DISTRIBUTIONS
       perl 5.006
       strict 0
       warnings 0
-  Dist-CheckConflicts-0.11
-    pathname: D/DO/DOY/Dist-CheckConflicts-0.11.tar.gz
-    provides:
-      Dist::CheckConflicts 0.11
-    requirements:
-      Carp 0
-      Exporter 0
-      ExtUtils::MakeMaker 6.30
-      Module::Runtime 0.009
-      base 0
-      strict 0
-      warnings 0
   Exception-Class-1.39
     pathname: D/DR/DROLSKY/Exception-Class-1.39.tar.gz
     provides:
@@ -209,14 +163,6 @@ DISTRIBUTIONS
       perl 5.008001
       strict 0
       warnings 0
-  Exporter-Tiny-0.042
-    pathname: T/TO/TOBYINK/Exporter-Tiny-0.042.tar.gz
-    provides:
-      Exporter::Shiny 0.042
-      Exporter::Tiny 0.042
-    requirements:
-      ExtUtils::MakeMaker 6.17
-      perl 5.006001
   ExtUtils-Config-0.008
     pathname: L/LE/LEONT/ExtUtils-Config-0.008.tar.gz
     provides:
@@ -560,17 +506,6 @@ DISTRIBUTIONS
       CPAN::Meta::Prereqs 2.12091
       ExtUtils::MakeMaker 0
       parent 0
-  Module-Implementation-0.09
-    pathname: D/DR/DROLSKY/Module-Implementation-0.09.tar.gz
-    provides:
-      Module::Implementation 0.09
-    requirements:
-      Carp 0
-      ExtUtils::MakeMaker 0
-      Module::Runtime 0.012
-      Try::Tiny 0
-      strict 0
-      warnings 0
   Module-Metadata-1.000026
     pathname: E/ET/ETHER/Module-Metadata-1.000026.tar.gz
     provides:
@@ -627,36 +562,6 @@ DISTRIBUTIONS
       Scalar::Util 0
       perl 5.006
       strictures 1.004003
-  Package-Stash-0.37
-    pathname: D/DO/DOY/Package-Stash-0.37.tar.gz
-    provides:
-      Package::Stash 0.37
-      Package::Stash::PP 0.37
-    requirements:
-      B 0
-      Carp 0
-      Config 0
-      Dist::CheckConflicts 0.02
-      ExtUtils::MakeMaker 0
-      File::Spec 0
-      Getopt::Long 0
-      Module::Implementation 0.06
-      Package::Stash::XS 0.26
-      Scalar::Util 0
-      Symbol 0
-      Text::ParseWords 0
-      constant 0
-      strict 0
-      warnings 0
-  Package-Stash-XS-0.28
-    pathname: D/DO/DOY/Package-Stash-XS-0.28.tar.gz
-    provides:
-      Package::Stash::XS 0.28
-    requirements:
-      ExtUtils::MakeMaker 6.30
-      XSLoader 0
-      strict 0
-      warnings 0
   Parse-CPAN-Meta-1.4414
     pathname: D/DA/DAGOLDEN/Parse-CPAN-Meta-1.4414.tar.gz
     provides:
@@ -741,10 +646,10 @@ DISTRIBUTIONS
     requirements:
       Exporter 5.57
       perl 5.006
-  Shell-Carapace-0.01
-    pathname: K/KA/KABLAMO/Shell-Carapace-0.01.tar.gz
+  Shell-Carapace-0.03
+    pathname: K/KA/KABLAMO/Shell-Carapace-0.03.tar.gz
     provides:
-      Shell::Carapace 0.01
+      Shell::Carapace 0.03
     requirements:
       Capture::Tiny 0
       Minilla 0
@@ -753,13 +658,6 @@ DISTRIBUTIONS
       Path::Tiny 0
       String::ShellQuote 0
       Types::Path::Tiny 0
-  Sort-Naturally-1.03
-    pathname: B/BI/BINGOS/Sort-Naturally-1.03.tar.gz
-    provides:
-      Sort::Naturally 1.03
-    requirements:
-      ExtUtils::MakeMaker 0
-      perl 5
   String-ShellQuote-1.04
     pathname: R/RO/ROSCH/String-ShellQuote-1.04.tar.gz
     provides:
@@ -1015,48 +913,6 @@ DISTRIBUTIONS
       constant 0
       strict 0
       warnings 0
-  Type-Tiny-1.000005
-    pathname: T/TO/TOBYINK/Type-Tiny-1.000005.tar.gz
-    provides:
-      Devel::TypeTiny::Perl56Compat 1.000005
-      Devel::TypeTiny::Perl58Compat 1.000005
-      Error::TypeTiny 1.000005
-      Error::TypeTiny::Assertion 1.000005
-      Error::TypeTiny::Compilation 1.000005
-      Error::TypeTiny::WrongNumberOfParameters 1.000005
-      Eval::TypeTiny 1.000005
-      Reply::Plugin::TypeTiny 1.000005
-      Test::TypeTiny 1.000005
-      Type::Coercion 1.000005
-      Type::Coercion::FromMoose 1.000005
-      Type::Coercion::Union 1.000005
-      Type::Library 1.000005
-      Type::Params 1.000005
-      Type::Parser 1.000005
-      Type::Registry 1.000005
-      Type::Tiny 1.000005
-      Type::Tiny::Class 1.000005
-      Type::Tiny::Duck 1.000005
-      Type::Tiny::Enum 1.000005
-      Type::Tiny::Intersection 1.000005
-      Type::Tiny::Role 1.000005
-      Type::Tiny::Union 1.000005
-      Type::Tiny::_HalfOp undef
-      Type::Utils 1.000005
-      Types::Common::Numeric 1.000005
-      Types::Common::String 1.000005
-      Types::Standard 1.000005
-      Types::Standard::ArrayRef 1.000005
-      Types::Standard::Dict 1.000005
-      Types::Standard::HashRef 1.000005
-      Types::Standard::Map 1.000005
-      Types::Standard::ScalarRef 1.000005
-      Types::Standard::Tuple 1.000005
-      Types::TypeTiny 1.000005
-    requirements:
-      Exporter::Tiny 0.026
-      ExtUtils::MakeMaker 6.17
-      perl 5.006001
   Types-Path-Tiny-0.005
     pathname: D/DA/DAGOLDEN/Types-Path-Tiny-0.005.tar.gz
     provides:

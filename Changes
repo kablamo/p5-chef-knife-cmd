@@ -2,6 +2,8 @@ Revision history for Perl extension Chef-Knife-Cmd
 
 {{$NEXT}}
 
+    - logfile param no longer required
+
 0.02 2015-02-09T12:59:53Z
 
     - automatic decoding when '--format json' is used

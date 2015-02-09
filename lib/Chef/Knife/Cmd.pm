@@ -10,7 +10,7 @@ use Shell::Carapace;
 use String::ShellQuote;
 use JSON::MaybeXS;
 
-our $VERSION = "0.02";
+our $VERSION = "0.03";
 
 =head1 NAME
 
@@ -21,10 +21,10 @@ Chef::Knife::Cmd - A small wrapper around the Chef 'knife' command line utility
     use Chef::Knife::Cmd;
 
     my $knife = Chef::Knife::Cmd->new(
-        verbose   => 0,           # if true, tee output to STDOUT
-        logfile   => 'knife.log', # all cmd output logged here
-        print_cmd => 1,           # if you want knife cmd printed to STDOUT
-        format    => 'json',      # all knife cmds will use '--format json'
+        verbose   => 0,           # if true, tee output to STDOUT; default is false
+        logfile   => 'knife.log',
+        print_cmd => 1,
+        format    => 'json',      # add '--format json' to all knife commands
     );
 
     # All methods below

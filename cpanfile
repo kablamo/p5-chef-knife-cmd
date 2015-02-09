@@ -1,5 +1,5 @@
 requires 'Moo';
-requires 'Shell::Carapace';
+requires 'Shell::Carapace', '>=0.03';
 requires 'String::ShellQuote';
 requires 'JSON::MaybeXS';
 
