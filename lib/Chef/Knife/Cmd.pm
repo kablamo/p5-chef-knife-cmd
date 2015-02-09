@@ -21,15 +21,15 @@ Chef::Knife::Cmd - A small wrapper around the Chef 'knife' command line utility
     use Chef::Knife::Cmd;
 
     my $knife = Chef::Knife::Cmd->new(
-        verbose   => 1,           # tee output to STDOUT
+        verbose   => 0,           # if true, tee output to STDOUT
         logfile   => 'knife.log', # all cmd output logged here
         print_cmd => 1,           # if you want knife cmd printed to STDOUT
-        format    => 'json',      # all knife cmds will use --format 'json'
+        format    => 'json',      # all knife cmds will use '--format json'
     );
 
     # All methods below
     # - return the output of the cmd as a string
-    # - return a hashref of the decoded json output when format => 'json'
+    # - return a hashref of the decoded json output when '--format json' is used
 
     # knife bootstrap
     $knife->bootstrap($fqdn, %options);
@@ -99,7 +99,7 @@ has verbose    => (is => 'rw', default => sub { 0 });
 has print_cmd  => (is => 'rw', default => sub { 0 });
 has noop       => (is => 'rw', default => sub { 0 });
 has shell      => (is => 'lazy');
-has logfile    => (is => 'ro', default => sub { 'knife.log' });
+has logfile    => (is => 'ro');
 has format     => (is => 'rw');
 has _json_flag => (is => 'rw');
 
