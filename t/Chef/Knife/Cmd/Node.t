@@ -1,7 +1,6 @@
 use Test::Most;
 use 5.16.0;
 use DDP;
-use Devel::Confess;
 
 use Chef::Knife::Cmd;
 

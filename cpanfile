@@ -5,6 +5,7 @@ requires 'JSON::MaybeXS';
 
 on 'test' => sub {
     requires 'Test::Most';
+    requires 'DDP';
 };
 
 on 'build' => sub {
