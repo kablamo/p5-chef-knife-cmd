@@ -1,6 +1,5 @@
 package Chef::Knife::Cmd::Vault;
 use Moo;
-use JSON::MaybeXS;
 
 has knife => (is => 'ro', required => 1, handles => [qw/handle_options run/]);
 
@@ -29,12 +28,6 @@ sub show {
     push @cmd, $item if $item;
     push @cmd, @opts;
     $self->run(@cmd);
-}
-
-sub item {
-    my ($self, $vault, $item, %options) = @_;
-    my $json = $self->show($vault, $item, format => 'json', %options);
-    return JSON->new->utf8->decode($json);
 }
 
 1;

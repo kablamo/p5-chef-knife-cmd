@@ -8,6 +8,7 @@ use Chef::Knife::Cmd::Node;
 use Chef::Knife::Cmd::Vault;
 use Shell::Carapace;
 use String::ShellQuote;
+use JSON::MaybeXS;
 
 our $VERSION = "0.01";
 
@@ -23,7 +24,12 @@ Chef::Knife::Cmd - A small wrapper around the Chef 'knife' command line utility
         verbose   => 1,           # tee output to STDOUT
         logfile   => 'knife.log', # all cmd output logged here
         print_cmd => 1,           # if you want knife cmd printed to STDOUT
+        format    => 'json',      # all knife cmds will use --format 'json'
     );
+
+    # All methods below
+    # - return the output of the cmd as a string
+    # - return a hashref of the decoded json output when format => 'json'
 
     # knife bootstrap
     $knife->bootstrap($fqdn, %options);
@@ -49,9 +55,6 @@ Chef::Knife::Cmd - A small wrapper around the Chef 'knife' command line utility
     $knife->vault->create($vault, $item, $values, %options);
     $knife->vault->update($vault, $item, $values, %options);
     $knife->vault->show($vault, $item_name, %options);
-    my $item = $knife->vault->item($vault, $item_name, %options);
-    say $item->{secret};
-    say $item->{super_secret};
 
 =head1 DESCRIPTION
 
@@ -92,11 +95,13 @@ Yay.
 
 =cut
 
-has verbose   => (is => 'rw', default => sub { 0 });
-has print_cmd => (is => 'rw', default => sub { 0 });
-has noop      => (is => 'rw', default => sub { 0 });
-has shell     => (is => 'lazy');
-has logfile   => (is => 'ro', default => sub { 'knife.log' });
+has verbose    => (is => 'rw', default => sub { 0 });
+has print_cmd  => (is => 'rw', default => sub { 0 });
+has noop       => (is => 'rw', default => sub { 0 });
+has shell      => (is => 'lazy');
+has logfile    => (is => 'ro', default => sub { 'knife.log' });
+has format     => (is => 'rw');
+has _json_flag => (is => 'rw');
 
 has client    => (is => 'lazy');
 has ec2       => (is => 'lazy');
@@ -128,6 +133,12 @@ sub bootstrap {
 sub handle_options {
     my ($self, %options) = @_;
 
+    $options{format} //= $self->format if $self->format;
+
+    $options{format} && $options{format} eq 'json'
+        ? $self->_json_flag(1)
+        : $self->_json_flag(0);
+
     my @opts;
     for my $option (sort keys %options) {
         my $value = $options{$option};
@@ -140,24 +151,11 @@ sub handle_options {
     return @opts;
 }
 
-sub handle_optionsx {
-    my ($self, %options) = @_;
-
-    my $cmd = "";
-    for my $opt (sort keys %options) {
-        my $value = $options{$opt};
-        $opt =~ s/_/-/g;
-
-        $cmd .= " --$opt";
-        $cmd .= " '$value'" if $value ne "1";
-    }
-
-    return $cmd;
-}
-
 sub run {
     my ($self, @cmds) = @_;
-    $self->shell->local(@cmds);
+    my $out = $self->shell->local(@cmds);
+    return JSON->new->utf8->decode($out) if $self->_json_flag;
+    return $out;
 }
 
 1;
