@@ -11,7 +11,12 @@ Chef::Knife::Cmd - A small wrapper around the Chef 'knife' command line utility
         verbose   => 1,           # tee output to STDOUT
         logfile   => 'knife.log', # all cmd output logged here
         print_cmd => 1,           # if you want knife cmd printed to STDOUT
+        format    => 'json',      # all knife cmds will use --format 'json'
     );
+
+    # All methods below
+    # - return the output of the cmd as a string
+    # - return a hashref of the decoded json output when format => 'json'
 
     # knife bootstrap
     $knife->bootstrap($fqdn, %options);
@@ -37,9 +42,6 @@ Chef::Knife::Cmd - A small wrapper around the Chef 'knife' command line utility
     $knife->vault->create($vault, $item, $values, %options);
     $knife->vault->update($vault, $item, $values, %options);
     $knife->vault->show($vault, $item_name, %options);
-    my $item = $knife->vault->item($vault, $item_name, %options);
-    say $item->{secret};
-    say $item->{super_secret};
 
 # DESCRIPTION
 

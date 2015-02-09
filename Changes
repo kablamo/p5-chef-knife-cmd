@@ -2,6 +2,11 @@ Revision history for Perl extension Chef-Knife-Cmd
 
 {{$NEXT}}
 
+0.02 2015-02-09T12:59:53Z
+
+    - automatic decoding when '--format json' is used
+    - minor pod updates
+
 0.01 2015-02-09T01:06:44Z
 
     - original version
