@@ -163,6 +163,14 @@ DISTRIBUTIONS
       perl 5.008001
       strict 0
       warnings 0
+  Exporter-Tiny-0.042
+    pathname: T/TO/TOBYINK/Exporter-Tiny-0.042.tar.gz
+    provides:
+      Exporter::Shiny 0.042
+      Exporter::Tiny 0.042
+    requirements:
+      ExtUtils::MakeMaker 6.17
+      perl 5.006001
   ExtUtils-Config-0.008
     pathname: L/LE/LEONT/ExtUtils-Config-0.008.tar.gz
     provides:
@@ -646,10 +654,10 @@ DISTRIBUTIONS
     requirements:
       Exporter 5.57
       perl 5.006
-  Shell-Carapace-0.03
-    pathname: K/KA/KABLAMO/Shell-Carapace-0.03.tar.gz
+  Shell-Carapace-0.07
+    pathname: K/KA/KABLAMO/Shell-Carapace-0.07.tar.gz
     provides:
-      Shell::Carapace 0.03
+      Shell::Carapace 0.07
     requirements:
       Capture::Tiny 0
       Minilla 0
@@ -658,6 +666,7 @@ DISTRIBUTIONS
       Path::Tiny 0
       String::ShellQuote 0
       Types::Path::Tiny 0
+      Types::Standard 0
   String-ShellQuote-1.04
     pathname: R/RO/ROSCH/String-ShellQuote-1.04.tar.gz
     provides:
@@ -913,6 +922,48 @@ DISTRIBUTIONS
       constant 0
       strict 0
       warnings 0
+  Type-Tiny-1.000005
+    pathname: T/TO/TOBYINK/Type-Tiny-1.000005.tar.gz
+    provides:
+      Devel::TypeTiny::Perl56Compat 1.000005
+      Devel::TypeTiny::Perl58Compat 1.000005
+      Error::TypeTiny 1.000005
+      Error::TypeTiny::Assertion 1.000005
+      Error::TypeTiny::Compilation 1.000005
+      Error::TypeTiny::WrongNumberOfParameters 1.000005
+      Eval::TypeTiny 1.000005
+      Reply::Plugin::TypeTiny 1.000005
+      Test::TypeTiny 1.000005
+      Type::Coercion 1.000005
+      Type::Coercion::FromMoose 1.000005
+      Type::Coercion::Union 1.000005
+      Type::Library 1.000005
+      Type::Params 1.000005
+      Type::Parser 1.000005
+      Type::Registry 1.000005
+      Type::Tiny 1.000005
+      Type::Tiny::Class 1.000005
+      Type::Tiny::Duck 1.000005
+      Type::Tiny::Enum 1.000005
+      Type::Tiny::Intersection 1.000005
+      Type::Tiny::Role 1.000005
+      Type::Tiny::Union 1.000005
+      Type::Tiny::_HalfOp undef
+      Type::Utils 1.000005
+      Types::Common::Numeric 1.000005
+      Types::Common::String 1.000005
+      Types::Standard 1.000005
+      Types::Standard::ArrayRef 1.000005
+      Types::Standard::Dict 1.000005
+      Types::Standard::HashRef 1.000005
+      Types::Standard::Map 1.000005
+      Types::Standard::ScalarRef 1.000005
+      Types::Standard::Tuple 1.000005
+      Types::TypeTiny 1.000005
+    requirements:
+      Exporter::Tiny 0.026
+      ExtUtils::MakeMaker 6.17
+      perl 5.006001
   Types-Path-Tiny-0.005
     pathname: D/DA/DAGOLDEN/Types-Path-Tiny-0.005.tar.gz
     provides:

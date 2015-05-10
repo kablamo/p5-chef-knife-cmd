@@ -38,6 +38,13 @@ Chef::Knife::Cmd - A small wrapper around the Chef 'knife' command line utility
     $knife->vault->update($vault, $item, $values, %options);
     $knife->vault->show($vault, $item_name, %options);
 
+    # knife search commands
+    $knife->search->node($query, %options);
+    $knife->search->client($query, %options);
+
+    # knife data bag commands
+    $knife->data_bag->show($data_bag, %options);
+
     # All methods return the output of the cmd as a string
     my $out = $knife->node->show('mynode');
     # => 
