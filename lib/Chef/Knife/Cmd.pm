@@ -6,6 +6,8 @@ use Chef::Knife::Cmd::Client;
 use Chef::Knife::Cmd::EC2;
 use Chef::Knife::Cmd::Node;
 use Chef::Knife::Cmd::Vault;
+use Chef::Knife::Cmd::Search;
+use Chef::Knife::Cmd::DataBag;
 use Shell::Carapace;
 use String::ShellQuote;
 use JSON::MaybeXS;
@@ -50,6 +52,13 @@ Chef::Knife::Cmd - A small wrapper around the Chef 'knife' command line utility
     $knife->vault->create($vault, $item, $values, %options);
     $knife->vault->update($vault, $item, $values, %options);
     $knife->vault->show($vault, $item_name, %options);
+
+    # knife search commands
+    $knife->search->node($query, %options);
+    $knife->search->client($query, %options);
+
+    # knife data bag commands
+    $knife->data_bag->show($data_bag, %options);
 
     # All methods return the output of the cmd as a string
     my $out = $knife->node->show('mynode');
@@ -118,11 +127,15 @@ has client    => (is => 'lazy');
 has ec2       => (is => 'lazy');
 has node      => (is => 'lazy');
 has vault     => (is => 'lazy');
+has search    => (is => 'lazy');
+has data_bag  => (is => 'lazy');
 
 sub _build_client    { Chef::Knife::Cmd::Client->new(knife => shift)    }
 sub _build_ec2       { Chef::Knife::Cmd::EC2->new(knife => shift)       }
 sub _build_node      { Chef::Knife::Cmd::Node->new(knife => shift)      }
 sub _build_vault     { Chef::Knife::Cmd::Vault->new(knife => shift)     }
+sub _build_search    { Chef::Knife::Cmd::Search->new(knife => shift)    }
+sub _build_data_bag  { Chef::Knife::Cmd::DataBag->new(knife => shift)   }
 
 sub _build_shell {
     my $self = shift;
