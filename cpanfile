@@ -7,7 +7,7 @@ on 'test' => sub {
     requires 'Test::Most';
 };
 
-on 'build' => sub {
+on 'develop' => sub {
     requires 'Minilla';
 }
 
