@@ -26,11 +26,6 @@
       ]
    },
    "prereqs" : {
-      "build" : {
-         "requires" : {
-            "Minilla" : "0"
-         }
-      },
       "configure" : {
          "requires" : {
             "Module::Build::Tiny" : "0.035"
@@ -38,6 +33,7 @@
       },
       "develop" : {
          "requires" : {
+            "Minilla" : "0",
             "Test::CPAN::Meta" : "0",
             "Test::MinimumVersion::Fast" : "0.04",
             "Test::PAUSE::Permissions" : "0.04",
@@ -71,7 +67,7 @@
          "web" : "https://github.com/kablamo/p5-chef-knife-cmd"
       }
    },
-   "version" : "0.05",
+   "version" : "0.06",
    "x_authority" : "cpan:KABLAMO",
    "x_contributors" : [
       "Marc Soda <marc@duckduckgo.com>",

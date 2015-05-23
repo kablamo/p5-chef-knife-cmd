@@ -2,6 +2,9 @@ Revision history for Perl extension Chef-Knife-Cmd
 
 {{$NEXT}}
 
+0.06 2015-05-23T19:04:47Z
+    - make Minilla a develop dependency instead of a build dependency
+
 0.05 2015-05-10T21:13:55Z
     - added support for 'knife data bag show'
     - added support for 'knife search node'
