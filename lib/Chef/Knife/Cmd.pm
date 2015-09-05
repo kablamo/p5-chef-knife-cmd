@@ -22,10 +22,9 @@ Chef::Knife::Cmd - A small wrapper around the Chef 'knife' command line utility
 
     use Chef::Knife::Cmd;
 
+    # See Shell::Carapace for details about the callback attribute
     my $knife = Chef::Knife::Cmd->new(
-        verbose   => 0,           # if true, tee output to STDOUT; default is false
-        logfile   => 'knife.log',
-        print_cmd => 1,
+        callback => sub { ... }, # optional. useful for logging realtime output; 
     );
 
     # knife bootstrap
@@ -123,6 +122,9 @@ has logfile    => (is => 'ro');
 has format     => (is => 'rw');
 has _json_flag => (is => 'rw');
 
+has callback   => (is => 'rw');
+has output     => (is => 'rw');
+
 has client    => (is => 'lazy');
 has ec2       => (is => 'lazy');
 has node      => (is => 'lazy');
@@ -139,13 +141,23 @@ sub _build_data_bag  { Chef::Knife::Cmd::DataBag->new(knife => shift)   }
 
 sub _build_shell {
     my $self = shift;
-    my $shell = Shell::Carapace->new(
-        print_cmd => $self->print_cmd(),
-        verbose   => $self->verbose(),
-        noop      => $self->noop(),
-    );
-    $shell->logfile($self->logfile) if $self->logfile();
-    return $shell;
+    my $cb   = sub {
+        my ($type, $message) = @_;
+        if ($type ne 'error') {
+            if ($type eq 'command') {
+                $self->output('');
+            }
+            else {
+                my $output = '';
+                $output .= $self->output . "\n" if $self->output;
+                $output .= $message;
+                $self->output($output);
+            }
+        }
+        $self->callback->(@_) if $self->callback;
+    };
+
+    return Shell::Carapace->new(callback => $cb);
 }
 
 sub bootstrap {
@@ -178,7 +190,9 @@ sub handle_options {
 
 sub run {
     my ($self, @cmds) = @_;
-    my $out = $self->shell->local(@cmds);
+    return shell_quote @cmds if $self->noop;
+    $self->shell->local(@cmds);
+    my $out = $self->output;
     return JSON->new->utf8->decode($out) if $self->_json_flag;
     return $out;
 }

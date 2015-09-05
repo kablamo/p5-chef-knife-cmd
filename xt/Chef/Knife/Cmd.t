@@ -1,4 +1,4 @@
-use Test::Most skip_all => 'requres a chef server';
+use Test::Most skip_all => 'requires a chef server';
 
 use Chef::Knife::Cmd;
 
@@ -12,14 +12,19 @@ my $expected = {
     normal           => ignore,
 };
 
-$knife = Chef::Knife::Cmd->new(logfile => 't/knife.log');
+my $cb = sub {
+    my ($type, $msg) = @_;
+    diag "$type $msg\n";
+};
+
+$knife = Chef::Knife::Cmd->new(callback => $cb);
 $out   = $knife->node->show($node);
 like $out , qr/Node Name:\s+$node/, "knife node show $node";
 
 $out   = $knife->node->show($node, format => 'json');
 cmp_deeply $out, $expected, "knife node show $node --format json";
 
-$knife = Chef::Knife::Cmd->new(logfile => 't/knife.log', format => 'json');
+$knife = Chef::Knife::Cmd->new(format => 'json', callback => $cb);
 $out   = $knife->node->show($node);
 cmp_deeply $out, $expected, "knife node show $node --format json (constructor)";
 
