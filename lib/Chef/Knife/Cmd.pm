@@ -12,7 +12,7 @@ use Shell::Carapace;
 use String::ShellQuote;
 use JSON::MaybeXS;
 
-our $VERSION = "0.06";
+our $VERSION = "0.07";
 
 =head1 NAME
 
@@ -96,29 +96,19 @@ All commands return the output of the knife command.
 
 =item Logging
 
-All knife cmd output is logged to a logfile for later analysis.  This allows
-you to provide verbose logging to users while not cluttering their terminal
-with tons of output.
-
-=item Tee output to STDOUT
-
-Instead of waiting for an hour for a knife command to finish, you can view
-output from the knife command in real time as it happens.  This happens when
-the 'verbose' attribute is true.
+If you wish to log output, you should do so via the 'callback' attribute.  See
+Shell::Carapace for more details.
 
 =item Exceptions
 
-If a knife command fails, this module will throw an exception.
+If a knife command fails, an exception is thrown.
 
 =back
 
 =cut
 
-has verbose    => (is => 'rw', default => sub { 0 });
-has print_cmd  => (is => 'rw', default => sub { 0 });
 has noop       => (is => 'rw', default => sub { 0 });
 has shell      => (is => 'lazy');
-has logfile    => (is => 'ro');
 has format     => (is => 'rw');
 has _json_flag => (is => 'rw');
 
