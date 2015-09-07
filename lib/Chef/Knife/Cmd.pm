@@ -12,7 +12,7 @@ use Shell::Carapace;
 use String::ShellQuote;
 use JSON::MaybeXS;
 
-our $VERSION = "0.07";
+our $VERSION = "0.08";
 
 =head1 NAME
 
@@ -147,7 +147,7 @@ sub _build_shell {
         $self->callback->(@_) if $self->callback;
     };
 
-    return Shell::Carapace->new(callback => $cb);
+    return Shell::Carapace->shell(callback => $cb);
 }
 
 sub bootstrap {

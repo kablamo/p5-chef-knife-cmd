@@ -2,6 +2,9 @@ Revision history for Perl extension Chef-Knife-Cmd
 
 {{$NEXT}}
 
+0.08 2015-09-07T03:13:17Z
+    - Using Shell::Carapace v0.13.
+
 0.07 2015-09-05T22:28:05Z
     - This version is not backwards compatible with the previous version
     - Removed verbose, print_cmd, and logfile attributes
