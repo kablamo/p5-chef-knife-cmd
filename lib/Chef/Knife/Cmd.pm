@@ -181,7 +181,7 @@ sub handle_options {
 sub run {
     my ($self, @cmds) = @_;
     return shell_quote @cmds if $self->noop;
-    $self->shell->local(@cmds);
+    $self->shell->run(@cmds);
     my $out = $self->output;
     return JSON->new->utf8->decode($out) if $self->_json_flag;
     return $out;
