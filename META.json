@@ -45,7 +45,7 @@
          "requires" : {
             "JSON::MaybeXS" : "0",
             "Moo" : "0",
-            "Shell::Carapace" : "== 0.13",
+            "Shell::Carapace" : "0.18",
             "String::ShellQuote" : "0"
          }
       },
@@ -67,7 +67,7 @@
          "web" : "https://github.com/kablamo/p5-chef-knife-cmd"
       }
    },
-   "version" : "0.09",
+   "version" : "0.10",
    "x_authority" : "cpan:KABLAMO",
    "x_contributors" : [
       "Marc Soda <marc@duckduckgo.com>",

@@ -2,6 +2,10 @@ Revision history for Perl extension Chef-Knife-Cmd
 
 {{$NEXT}}
 
+0.10 2015-12-16T10:53:56Z
+    - Updated to use the latest version of Shell::Carapace.  Just updated the
+      cpanfile.
+
 0.09 2015-11-14T02:31:46Z
     - Updated to use the latest version of Shell::Carapace.  To support this,
       added the callback attribute
