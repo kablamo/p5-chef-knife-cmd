@@ -193,11 +193,11 @@ sub run {
 
 =over 4
 
-=item Capture::Tiny::Extended
+=item L<Capture::Tiny::Extended>
 
-=item Capture::Tiny
+=item L<Capture::Tiny>
 
-=item IPC::System::Simple
+=item L<IPC::System::Simple>
 
 =back
 
