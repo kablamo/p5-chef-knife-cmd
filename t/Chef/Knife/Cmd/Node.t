@@ -31,4 +31,9 @@ is $knife->node->run_list->add($node, $entries),
     "knife node run_list add $node " . join(", ", @$entries),
     "knife node run_list add $node " . join(", ", @$entries);
 
+my $file = "/tmp/boop.json";
+is $knife->node->from->file($file),
+    "knife node from file $file",
+    "knife node from file $file";
+
 done_testing;

@@ -39,17 +39,6 @@ DISTRIBUTIONS
       CPAN::Meta::Spec 2.143240
       CPAN::Meta::Validator 2.143240
     requirements:
-      CPAN::Meta::Requirements 2.121
-      CPAN::Meta::YAML 0.008
-      Carp 0
-      ExtUtils::MakeMaker 6.17
-      JSON::PP 2.27200
-      Parse::CPAN::Meta 1.4414
-      Scalar::Util 0
-      perl 5.008
-      strict 0
-      version 0.88
-      warnings 0
   CPAN-Meta-Requirements-2.132
     pathname: D/DA/DAGOLDEN/CPAN-Meta-Requirements-2.132.tar.gz
     provides:
@@ -650,9 +639,7 @@ DISTRIBUTIONS
     provides:
       Net::OpenSSH 0.64
       Net::OpenSSH::ConnectionCache undef
-      Net::OpenSSH::Constants 0.51_07
       Net::OpenSSH::ModuleLoader undef
-      Net::OpenSSH::OSTracer 0.58_01
       Net::OpenSSH::SSH undef
       Net::OpenSSH::ShellQuoter undef
       Net::OpenSSH::ShellQuoter::Chain undef

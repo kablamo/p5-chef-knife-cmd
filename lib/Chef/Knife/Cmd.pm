@@ -44,6 +44,7 @@ Chef::Knife::Cmd - A small wrapper around the Chef 'knife' command line utility
     $knife->node->create($node, %options);
     $knife->node->delete($node, %options);
     $knife->node->flip($node, $environment, %options);
+    $knife->node->from->file($file, %options);
     $knife->node->run_list->add($node, \@entries, %options);
 
     # knife vault commands
