@@ -29,6 +29,7 @@ Chef::Knife::Cmd - A small wrapper around the Chef 'knife' command line utility
     $knife->node->create($node, %options);
     $knife->node->delete($node, %options);
     $knife->node->flip($node, $environment, %options);
+    $knife->node->from->file($file, %options);
     $knife->node->run_list->add($node, \@entries, %options);
 
     # knife vault commands
@@ -87,9 +88,9 @@ Some things worth knowing about this module:
 
 # SEE ALSO
 
-- Capture::Tiny::Extended
-- Capture::Tiny
-- IPC::System::Simple
+- [Capture::Tiny::Extended](https://metacpan.org/pod/Capture::Tiny::Extended)
+- [Capture::Tiny](https://metacpan.org/pod/Capture::Tiny)
+- [IPC::System::Simple](https://metacpan.org/pod/IPC::System::Simple)
 
 # LICENSE
 

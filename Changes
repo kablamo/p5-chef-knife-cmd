@@ -2,6 +2,9 @@ Revision history for Perl extension Chef-Knife-Cmd
 
 {{$NEXT}}
 
+0.11 2016-04-16T01:27:35Z
+    - Added support for 'knife node from file <filename>'
+
 0.10 2015-12-16T10:53:56Z
     - Updated to use the latest version of Shell::Carapace.  Just updated the
       cpanfile.
@@ -21,23 +24,23 @@ Revision history for Perl extension Chef-Knife-Cmd
       Shell::Carapace and provide a more flexible user interface for logging.
 
 0.06 2015-05-23T19:04:47Z
-    - make Minilla a develop dependency instead of a build dependency
+    - Make Minilla a develop dependency instead of a build dependency
 
 0.05 2015-05-10T21:13:55Z
-    - added support for 'knife data bag show'
-    - added support for 'knife search node'
-    - added support for 'knife search index'
+    - Added support for 'knife data bag show'
+    - Added support for 'knife search node'
+    - Added support for 'knife search index'
 
 0.04 2015-02-09T21:03:56Z
-    - updates to pod
+    - Updates to pod
 
 0.03 2015-02-09T17:53:45Z
-    - logfile param no longer required
+    - Logfile param no longer required
 
 0.02 2015-02-09T12:59:53Z
-    - automatic decoding when '--format json' is used
-    - minor pod updates
+    - Automatic decoding when '--format json' is used
+    - Minor pod updates
 
 0.01 2015-02-09T01:06:44Z
-    - original version
+    - Original version
 

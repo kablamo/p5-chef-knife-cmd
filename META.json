@@ -67,10 +67,11 @@
          "web" : "https://github.com/kablamo/p5-chef-knife-cmd"
       }
    },
-   "version" : "0.10",
+   "version" : "0.11",
    "x_authority" : "cpan:KABLAMO",
    "x_contributors" : [
       "Marc Soda <marc@duckduckgo.com>",
+      "Mohammad S Anwar <mohammad.anwar@yahoo.com>",
       "Eric Johnson <github@iijo.org>"
    ]
 }
