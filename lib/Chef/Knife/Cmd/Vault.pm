@@ -21,11 +21,27 @@ sub update {
     $self->run(@cmd);
 }
 
+sub delete {
+    my ($self, $vault, $item, %options) = @_;
+    my @opts = $self->handle_options(%options);
+    my @cmd  = (qw/knife vault delete/, $vault, $item);
+    push @cmd, @opts;
+    $self->run(@cmd);
+}
+
 sub show {
     my ($self, $vault, $item, %options) = @_;
     my @opts = $self->handle_options(%options);
     my @cmd  = (qw/knife vault show/, $vault);
     push @cmd, $item if $item;
+    push @cmd, @opts;
+    $self->run(@cmd);
+}
+
+sub list {
+    my ($self, %options) = @_;
+    my @opts = $self->handle_options(%options);
+    my @cmd  = (qw/knife vault list/);
     push @cmd, @opts;
     $self->run(@cmd);
 }

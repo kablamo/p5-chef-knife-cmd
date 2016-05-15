@@ -49,9 +49,11 @@ Chef::Knife::Cmd - A small wrapper around the Chef 'knife' command line utility
 
     # knife vault commands
     # hint: use $knife->vault->item() instead of $knife->vault->show()
+    $knife->vault->list(%options);
+    $knife->vault->show($vault, $item_name, %options);
     $knife->vault->create($vault, $item, $values, %options);
     $knife->vault->update($vault, $item, $values, %options);
-    $knife->vault->show($vault, $item_name, %options);
+    $knife->vault->delete($vault, $item, %options);
 
     # knife search commands
     $knife->search->node($query, %options);
