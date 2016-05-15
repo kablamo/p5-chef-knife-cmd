@@ -2,8 +2,12 @@ Revision history for Perl extension Chef-Knife-Cmd
 
 {{$NEXT}}
 
+0.12 2016-05-15T02:18:34Z
+    Added support for 'knife vault list'
+    Added support for 'knife vault delete'
+
 0.11 2016-04-16T01:27:35Z
-    - Added support for 'knife node from file <filename>'
+    - Added support for 'knife node from file'
 
 0.10 2015-12-16T10:53:56Z
     - Updated to use the latest version of Shell::Carapace.  Just updated the
