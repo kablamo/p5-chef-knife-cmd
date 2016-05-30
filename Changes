@@ -2,6 +2,9 @@ Revision history for Perl extension Chef-Knife-Cmd
 
 {{$NEXT}}
 
+0.14 2016-05-30T17:16:48Z
+    - Added support for 'knife vault remove'
+
 0.13 2016-05-18T01:58:27Z
     - Added $item param to $knife->data_bag->show().  May not be backwards
       compatible depending on what arguments your code passes to show().
