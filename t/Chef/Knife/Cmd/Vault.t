@@ -37,4 +37,12 @@ is $knife->vault->list,
     "knife vault list",
     "knife vault list";
 
+my $cmd2 = $knife->vault->remove($vault, $item, undef, 
+    search => "name:$node", 
+    mode   => "client",
+);
+is $cmd2,
+    "knife vault remove $vault $item --mode client --search name:$node",
+    "knife vault remove $vault $item --mode client --search name:$node";
+
 done_testing;

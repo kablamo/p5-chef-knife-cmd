@@ -46,4 +46,13 @@ sub list {
     $self->run(@cmd);
 }
 
+sub remove {
+    my ($self, $vault, $item, $values, %options) = @_;
+    my @opts = $self->handle_options(%options);
+    my @cmd  = (qw/knife vault remove/, $vault, $item);
+    push @cmd, $values if $values;
+    push @cmd, @opts;
+    $self->run(@cmd);
+}
+
 1;
