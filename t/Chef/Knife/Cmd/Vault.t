@@ -7,6 +7,8 @@ my $vault  = 'priv_keys';
 my $item   = 'tarsnap';
 my $values = '{ "yarf" : "gnarble", "yiff" : 1 }';
 my $admin  = 'batman';
+my $path   = '/tmp/deleteme';
+
 my $knife = Chef::Knife::Cmd->new(noop => 1);
 
 is $knife->vault->create($vault, $item, $values),
@@ -44,5 +46,9 @@ my $cmd2 = $knife->vault->remove($vault, $item, undef,
 is $cmd2,
     "knife vault remove $vault $item --mode client --search name:$node",
     "knife vault remove $vault $item --mode client --search name:$node";
+
+is $knife->vault->download($vault, $item, $path),
+    "knife vault download $vault $item $path",
+    "knife vault download $vault $item $path";
 
 done_testing;

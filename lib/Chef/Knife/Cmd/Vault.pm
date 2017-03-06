@@ -55,4 +55,12 @@ sub remove {
     $self->run(@cmd);
 }
 
+sub download {
+    my ($self, $vault, $item, $path, %options) = @_;
+    my @opts = $self->handle_options(%options);
+    my @cmd  = (qw/knife vault download/, $vault, $item, $path);
+    push @cmd, @opts;
+    $self->run(@cmd);
+}
+
 1;
